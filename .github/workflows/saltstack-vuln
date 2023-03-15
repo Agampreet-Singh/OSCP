@@ -1,0 +1,12 @@
+saltstack vulnerability 
+
+install exploit saltstack.py 
+
+saltstack.py -m <domain>
+
+you get a root key its a symbol to success vulnerable and exploit the system 
+
+
+hacked succesfully through saltstack command with nc -lvnp <port> command 
+
+

