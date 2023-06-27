@@ -1,0 +1,12 @@
+SCP ( secure copy ) 
+If you see the situation of scp than try this 
+
+Copy your terminal authorised_key
+
+And try this command 
+
+scp -O (your-auth-key) targetuser@192.168.213.100:/home/targetuser/.ssh/authorized_keys
+
+And try this 
+
+ssh targetuser@192.168.213.100
