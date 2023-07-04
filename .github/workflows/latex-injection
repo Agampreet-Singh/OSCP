@@ -1,0 +1,23 @@
+latex equetion genrator is a web server to execute the equetion of maths
+
+we try to latex injection
+
+search github latex injection
+
+we use this injection script
+
+code = $\lstinputlisting{/etc/passwd}$
+
+if show /etc/passwd than it is hackable by this code
+
+you can try to add reverse shell to replace this /etc/passwd
+but my case this not execute shell so i try something diffrent
+
+$\lstinputlisting{/var/www/dev/.htpasswd}$
+
+now i see user and enocded hash
+and i decrypt the hash and i access the ssh shell with user to show the hash
+
+-------------
+HAPPY HACKING
+------------
